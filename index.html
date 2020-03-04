@@ -40,7 +40,7 @@ gltfアニメ再生用-->
 
 
 <a-entity camera look-controls>
-<a-entity cursor="rayOrigin: mouse" fuse="false" color="black" scale="2 2">
+<a-cursor fuse="false" color="black" scale="2 2">
         <!--a-animation 
              begin="mouseenter" 
              easing="ease-out" 
@@ -75,7 +75,7 @@ gltfアニメ再生用-->
              to="black" 
              dur="0">
       </a-animation-->
-</a-entity>
+</a-cursor>
 </a-entity>
 <!--fuse="true" fuse-timeout="3000" -->
 
@@ -127,9 +127,9 @@ gltfアニメ再生用-->
 
 </a-scene>
 <script>
-
- var linkElements = document.getElementsByClassName("link-object");
  /*
+ var linkElements = document.getElementsByClassName("link-object");
+
   for (var i = 0; i < linkElements.length; i++)
   {
     linkElements[i].addEventListener('click', function() {
@@ -139,6 +139,7 @@ gltfアニメ再生用-->
   }
 */
 
+/*
     AFRAME.registerComponent('cursor-listener', {
         init: function () {
 
@@ -148,6 +149,7 @@ gltfアニメ再生用-->
             });
         }
     });
+    */
 
 
 
