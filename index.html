@@ -16,8 +16,8 @@ https://opensource.org/licenses/mit-license.php
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 <link rel="stylesheet" href="style.css" />
-<title>My first VR site</title>
- <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<title>VR site</title>
+ <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <!-- glTFに含まれたアニメーションを再生するためにaframe-extrasをロード -->
   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
@@ -40,10 +40,10 @@ gltfアニメ再生用-->
 
 
 <a-entity camera look-controls>
-<a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
-            position="0 0 -5"
-            geometry="primitive: ring"
-            material="color: white; shader: flat">
+  <a-entity cursor="fuse: true; fuseTimeout: 500"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: black; shader: flat">
         <!--a-animation 
              begin="mouseenter" 
              easing="ease-out" 
@@ -86,7 +86,7 @@ gltfアニメ再生用-->
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-marker.patt">
 
-<a-entity id="test" gltf-model="#model" class="link-object" data-link="https://www.google.co.jp" scale="0.03 0.03 0.03" position="2 0 0" rotation="90 90 -90" link="href:https://www.google.co.jp" animation-mixer cursor-listener></a-entity>
+<a-entity gltf-model="#model" class="link-object" data-link="https://www.google.co.jp" scale="0.03 0.03 0.03" position="2 0 0" rotation="90 90 -90" link="href:https://www.google.co.jp" animation-mixer cursor-listener></a-entity>
 <!--link="href:https://www.google.co.jp"-->
 <a-text position="-0.5 1 0" scale="0.5 0.5 0.5" value="Hello, World!" color="black" rotation="-90 0 0"></a-text>
 <a-plane src="#img"  width="0.8" height="0.8" position="1 0 0" rotation="-90 0 0"></a-plane>
@@ -131,11 +131,6 @@ gltfアニメ再生用-->
 </a-scene>
 <script>
 
-document.querySelector('#test').addEventListener('click', function () {
-  window.location.href="https://www.google.co.jp"
-  console.log("ok")
-});
-
 
  /*
  var linkElements = document.getElementsByClassName("link-object");
@@ -149,17 +144,18 @@ document.querySelector('#test').addEventListener('click', function () {
   }
 */
 
+/*
 
     AFRAME.registerComponent('cursor-listener', {
         init: function () {
-
+    var linkElements = document.getElementsByClassName("link-object");
             this.el.addEventListener('click', function (evt) {
                var link = this.getAttribute('data-link');
                window.location.href=link;
             });
         }
     });
-
+*/
 
 
 
