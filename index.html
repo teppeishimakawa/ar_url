@@ -35,18 +35,23 @@ gltfアニメ再生用-->
 
 <a-assets>
   <a-asset-item id="model" src="./gltf/Pagoda.glb"></a-asset-item>
+  <img id="img" src="./face.png">
+  <img id="video" src="warp.mp4">
 </a-assets>
 
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-marker.patt">
 
-<a-entity gltf-model="#model" class="link-object" scale="0.1 0.1 0.1" position="-1 1.25 0" animation-mixer></a-entity>
+<a-entity gltf-model="#model" class="link-object" scale="0.01 0.01 0.01" position="5 0 0" animation-mixer></a-entity>
 <!--link="href:https://www.google.co.jp"-->
+<a-text position="-1 1.25 -3" value="Hello, World!" color="black"></a-text>
+<a-plane src="#img"  width="5" height="5" position="10 0 0" rotation="-90 0 0"></a-plane>
+<a-plane src="#video"  width="5" height="5" position="0 10 0" rotation="-90 0 0"></a-plane>
+</a-text>
 <a-entity ></a-entity>
 </a-marker>
 
-<a-text position="-1 1.25 -3" value="Hello, World!" color="black"></a-text>
-</a-text>
+
 
 <!-- directional light shining from the top left.-->
 <!-- a-light color="white" position="-1 1 0" intensity="3" ></a-light-->
