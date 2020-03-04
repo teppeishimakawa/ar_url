@@ -29,7 +29,7 @@ gltfアニメ再生用-->
 </head>
 
 <body class="a-body">
- <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" class="fullscreen" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;">
+ <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" class="fullscreen" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;" cursor="rayOrigin: mouse">
   <!--embedded arjs="sourceType: webcam;"-->
 
 <a-assets>
@@ -40,7 +40,7 @@ gltfアニメ再生用-->
 
 
 <a-entity camera look-controls>
-<a-cursor fuse="false" color="black" scale="2 2">
+<a-entity cursor fuse="false" color="black" scale="2 2">
         <!--a-animation 
              begin="mouseenter" 
              easing="ease-out" 
@@ -75,7 +75,7 @@ gltfアニメ再生用-->
              to="black" 
              dur="0">
       </a-animation-->
-</a-cursor>
+</a-entity>
 </a-entity>
 <!--fuse="true" fuse-timeout="3000" -->
 
@@ -85,7 +85,7 @@ gltfアニメ再生用-->
 
 <a-entity raycaster="objects: .clickable" cursor>
 </a-entity>
-<a-entity gltf-model="#model" class="link-object" data-link="https://www.google.co.jp" scale="0.03 0.03 0.03" position="2 0 0" rotation="90 90 -90" link="href:https://www.google.co.jp" class="clickable" onclick="fucntion(){location.href='https://google.co.jp'}" animation-mixer></a-entity>
+<a-entity id="test" gltf-model="#model" class="link-object" data-link="https://www.google.co.jp" scale="0.03 0.03 0.03" position="2 0 0" rotation="90 90 -90" link="href:https://www.google.co.jp" class="clickable" animation-mixer></a-entity>
 <!--link="href:https://www.google.co.jp"-->
 <a-text position="-0.5 1 0" scale="0.5 0.5 0.5" value="Hello, World!" color="black" rotation="-90 0 0"></a-text>
 <a-plane src="#img"  width="0.8" height="0.8" position="1 0 0" rotation="-90 0 0"></a-plane>
@@ -129,6 +129,12 @@ gltfアニメ再生用-->
 
 </a-scene>
 <script>
+
+document.querySelector('#test').addEventListener('click', function () {
+  window.location.href="https://www.google.co.jp"
+});
+
+
  /*
  var linkElements = document.getElementsByClassName("link-object");
 
