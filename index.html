@@ -39,6 +39,7 @@ gltfアニメ再生用-->
         }
     });
 
+/*
         AFRAME.registerComponent('play-listener', {
         init: function () {
             this.el.addEventListener('click', function (evt) {
@@ -47,6 +48,26 @@ gltfアニメ再生用-->
             });
         }
     });
+*/
+
+
+    AFRAME.registerComponent('play-listener', {
+        init: function ()
+    {
+          let el = this.el;
+          let vid = document.querySelector("#vid");
+          vid.pause();
+          el.addEventListener('mouseenter',function()
+      {
+      vid.play();
+      });
+      el.addEventListener('mouseleave',function()
+      {
+      vid.pause();
+      });
+    }
+    });
+
 
 </script>
 
@@ -57,8 +78,7 @@ gltfアニメ再生用-->
 <a-assets>
   <a-asset-item id="model" crossOrigin="anonymous" src="./gltf/Pagoda.glb"></a-asset-item>
   <img id="img" crossOrigin="anonymous" src="./face.jpg"></img>
-  <video id="vid" src="warp.mp4"></video>
-  <!--crossOrigin="anonymous" muted autoplay="true" playsinline webkit-playsinline loop="true"-->
+  <video id="vid" src="warp.mp4" crossOrigin="anonymous" muted autoplay="true" playsinline webkit-playsinline loop="true"></video>
 </a-assets>
 
 
