@@ -129,6 +129,7 @@ gltfアニメ再生用-->
 <script>
 
  var linkElements = document.getElementsByClassName("link-object");
+ /*
   for (var i = 0; i < linkElements.length; i++)
   {
     linkElements[i].addEventListener('click', function() {
@@ -136,8 +137,17 @@ gltfアニメ再生用-->
       window.location.href=link;
     }, false);
   }
+*/
 
+    AFRAME.registerComponent('cursor-listener', {
+        init: function () {
 
+            this.el.addEventListener('click', function (evt) {
+               var link = this.getAttribute('data-link');
+               window.location.href=link;
+            });
+        }
+    });
 
 
 
