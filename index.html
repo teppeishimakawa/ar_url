@@ -44,7 +44,7 @@ gltfアニメ再生用-->
             this.el.addEventListener('click', function (evt) {
               //↓超重要!
                 this.setAttribute('src', "warp.mp4");
-                this.play();
+                //this.play();
             });
         }
     });
@@ -57,7 +57,7 @@ gltfアニメ再生用-->
 <a-assets>
   <a-asset-item id="model" crossOrigin="anonymous" src="./gltf/Pagoda.glb"></a-asset-item>
   <img id="img" crossOrigin="anonymous" src="./face.jpg"></img>
-  <video id="vid" crossOrigin="anonymous" muted autoplay="true" playsinline webkit-playsinline loop="true" src="warp.mp4"></video>
+  <video id="vid" crossOrigin="anonymous" muted autoplay="false" playsinline webkit-playsinline loop="true" src="warp.mp4"></video>
 </a-assets>
 
 
