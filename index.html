@@ -34,15 +34,15 @@ gltfアニメ再生用-->
 
 
 <a-assets>
-  <a-asset-item id="model" src="./gltf/Pagoda.glb"></a-asset-item>
-  <img id="img" src="./face.png">
-  <video id="video" src="warp.mp4">
+  <a-asset-item id="model" crossOrigin="anonymous" src="./gltf/Pagoda.glb"></a-asset-item>
+  <img id="img" crossOrigin="anonymous" src="./face.png">
+  <video id="video" crossOrigin="anonymous" src="warp.mp4">
 </a-assets>
 
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-marker.patt">
 
-<a-entity gltf-model="#model" class="link-object" data-link="https://google.co.jp" scale="0.03 0.03 0.03" position="2 0 0" rotation="90 90 -90" geometry="primitive: plane; width: 2.5" animation-mixer></a-entity>
+<a-entity gltf-model="#model" class="link-object" data-link="https://google.co.jp" scale="0.03 0.03 0.03" position="2 0 0" rotation="90 90 -90" animation-mixer></a-entity>
 <!--link="href:https://www.google.co.jp"-->
 <a-text position="-0.5 1 0" scale="0.5 0.5 0.5" value="Hello, World!" color="black" rotation="-90 0 0"></a-text>
 <a-plane src="#img"  width="0.8" height="0.8" position="1 0 0" rotation="-90 0 0"></a-plane>
@@ -62,7 +62,42 @@ gltfアニメ再生用-->
 <!-- Dim ambient lighting. -->
 <!--a-light type="ambient" color="#white" intensity="3" light=""></a-light-->
 <a-entity camera>
-<a-cursor color="black" scale="2 2"></a-cursor>
+<a-cursor color="black" scale="2 2">
+        <a-animation 
+             begin="mouseenter" 
+             easing="ease-out" 
+             attribute="scale" 
+             fill="forwards" 
+             from="2 2 2" 
+             to="1 1 1" 
+             dur="300">
+      </a-animation>
+      <a-animation 
+             begin="mouseenter"
+             attribute="color" 
+             fill="forwards" 
+             from="black" 
+             to="red" 
+             dur="0">
+      </a-animation>
+      <a-animation 
+             begin="mouseleave" 
+             easing="ease-in" 
+             attribute="scale" 
+             fill="forwards" 
+             from="1 1 1" 
+             to="2 2 2" 
+             dur="300">
+      </a-animation>
+      <a-animation 
+             begin="mouseleave" 
+             attribute="color" 
+             fill="forwards" 
+             from="red" 
+             to="black" 
+             dur="0">
+      </a-animation>
+</a-cursor>
 </a-entity>
 <!--fuse="true" fuse-timeout="3000" -->
 
@@ -98,6 +133,17 @@ gltfアニメ再生用-->
       location.href=link;
     }, false);
   }
+
+  AFRAME.registerComponent('cursor-listener', {
+  init: function () {
+    this.el.addEventListener('click', function (evt) {
+   for (var i = 0; i < linkElements.length; i++) {
+    linkElements[i].addEventListener('click', function() {
+      var link = this.getAttribute('link');
+      location.href=link;
+    });
+  }
+});
 </script>
 </body>
 </html>
