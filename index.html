@@ -82,16 +82,14 @@ gltfアニメ再生用-->
 
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-marker.patt">
-
+</a-marker>
 
 <a-entity gltf-model="#model" class="link-object" data-link="https://google.co.jp" scale="0.03 0.03 0.03" position="2 0 0" rotation="90 90 -90" animation-mixer></a-entity>
 <!--link="href:https://www.google.co.jp"-->
 <a-text position="-0.5 1 0" scale="0.5 0.5 0.5" value="Hello, World!" color="black" rotation="-90 0 0"></a-text>
 <a-plane src="#img"  width="0.8" height="0.8" position="1 0 0" rotation="-90 0 0"></a-plane>
 <!--a-plane src="#video"  width="5" height="5" position="0 10 0" rotation="-90 0 0"></a-plane-->
-</a-text>
-<a-entity ></a-entity>
-</a-marker>
+
 
 
 
@@ -130,14 +128,15 @@ gltfアニメ再生用-->
 
 </a-scene>
 <script>
- /* var linkElements = document.getElementsByClassName("link-object");
+ var linkElements = document.getElementsByClassName("link-object");
   for (var i = 0; i < linkElements.length; i++) {
     linkElements[i].addEventListener('click', function() {
       var link = this.getAttribute('link');
       location.href=link;
     }, false);
-  } */
+  }
 
+/*
   AFRAME.registerComponent('cursor-listener', {
   init: function () {
     var linkElements = document.getElementsByClassName("link-object");
@@ -150,6 +149,7 @@ gltfアニメ再生用-->
     });
   }
 });
+*/
 </script>
 </body>
 </html>
