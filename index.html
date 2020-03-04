@@ -126,17 +126,19 @@ gltfアニメ再生用-->
 
 </a-scene>
 <script>
-  var linkElements = document.getElementsByClassName("link-object");
+ /* var linkElements = document.getElementsByClassName("link-object");
   for (var i = 0; i < linkElements.length; i++) {
     linkElements[i].addEventListener('click', function() {
       var link = this.getAttribute('link');
       location.href=link;
     }, false);
-  }
+  } */
 
   AFRAME.registerComponent('cursor-listener', {
   init: function () {
-    this.el.addEventListener('click', function (evt) {
+    var linkElements = document.getElementsByClassName("link-object");
+    this.el.addEventListener('click', function (evt)
+{
    for (var i = 0; i < linkElements.length; i++) {
     linkElements[i].addEventListener('click', function() {
       var link = this.getAttribute('link');
