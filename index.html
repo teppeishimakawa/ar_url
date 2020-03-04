@@ -56,14 +56,11 @@ gltfアニメ再生用-->
      {
       let vid = document.querySelector("#vid");
       vid.pause();
-      this.el.addEventListener('mouseenter',function()
+      this.el.addEventListener('click',function()
       {
       vid.play();
       });
-      this.el.addEventListener('mouseleave',function()
-      {
-      vid.pause();
-      });
+
     }
     });
 
@@ -172,36 +169,6 @@ gltfアニメ再生用-->
  -->
 
 </a-scene>
-<script>
 
-
- /*
- var linkElements = document.getElementsByClassName("link-object");
-
-  for (var i = 0; i < linkElements.length; i++)
-  {
-    linkElements[i].addEventListener('click', function() {
-      var link = this.getAttribute('data-link');
-      window.location.href=link;
-    }, false);
-  }
-*/
-
-/*
-
-    AFRAME.registerComponent('cursor-listener', {
-        init: function () {
-    var linkElements = document.getElementsByClassName("link-object");
-            this.el.addEventListener('click', function (evt) {
-               var link = this.getAttribute('data-link');
-               window.location.href=link;
-            });
-        }
-    });
-*/
-
-
-
-</script>
 </body>
 </html>
