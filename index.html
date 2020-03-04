@@ -64,6 +64,11 @@ gltfアニメ再生用-->
       {
       vid.pause();
       });
+      this.el.addEventListener('click',function()
+      {
+      this.setAttribute('src', "warp.mp4");
+      vid.play();
+      });
     }
     });
 
