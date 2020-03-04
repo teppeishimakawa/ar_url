@@ -50,18 +50,16 @@ gltfアニメ再生用-->
     });
 */
 
-
     AFRAME.registerComponent('play-listener', {
         init: function ()
     {
-          let el = this.el;
           let vid = document.querySelector("#vid");
           vid.pause();
-          el.addEventListener('mouseenter',function()
+          this.el.addEventListener('click',function()
       {
       vid.play();
       });
-      el.addEventListener('mouseleave',function()
+      this.el.addEventListener('mouseleave',function()
       {
       vid.pause();
       });
