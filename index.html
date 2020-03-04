@@ -56,11 +56,14 @@ gltfアニメ再生用-->
      {
       let vid = document.querySelector("#vid");
       vid.pause();
-      this.el.addEventListener('click',function()
+      this.el.addEventListener('mouseenter',function()
       {
       vid.play();
       });
-
+      this.el.addEventListener('mouseleave',function()
+      {
+      vid.pause();
+      });
     }
     });
 
