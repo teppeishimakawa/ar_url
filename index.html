@@ -61,6 +61,14 @@ gltfアニメ再生用-->
         }
     });
 
+    AFRAME.registerComponent('mail-listener', {
+        init: function () {
+            this.el.addEventListener('click', function (evt) {
+              //↓超重要!
+                this.setAttribute('href', 'mailto:testtest@gmail.com');
+            });
+        }
+    });
 
 
 
@@ -120,6 +128,7 @@ gltfアニメ再生用-->
 <a-assets>
   <a-asset-item id="model" crossOrigin="anonymous" src="./gltf/Pagoda.glb"></a-asset-item>
   <img id="img" crossOrigin="anonymous" src="./face.jpg"></img>
+  <img id="imga" crossOrigin="anonymous" src="./unnamed.jpg"></img>
   <video id="vid" src="warp1.m4v" crossOrigin="anonymous" muted autoplay="true" playsinline webkit-playsinline loop="true"></video>
 </a-assets>
 
@@ -175,7 +184,8 @@ gltfアニメ再生用-->
 <!--a-link href="tel:09084644360" title="My Homepage" image="#imga" position="-1 0 -1" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-link-->
 <!--a-entity geometry="primitive: box;width:0.7;height:0.7;depth:0.1" link="href:https://www.yahoo.co.jp" id="box" material="src:./face.jpg" position="0 0 0.9" rotation="-90 0 0" scale="1 1 1" tel-listener></a-entity-->
 
-<a-image id="box" width="0.7" height="0.7" src="#img" link="href:tel:09084644360" position="0 0 0.9" rotation="-90 0 0" tel-listener></a-image>
+<a-image id="box" width="0.7" height="0.7" src="#img" link="href:tel:09000000000" position="0 0 0.9" rotation="-90 0 0" tel-listener></a-image>
+<a-image id="boxa" width="0.7" height="0.7" src="#imga" link="href:mailto:testtest@gmail.com" position="0 0 1.8" rotation="-90 0 0" mail-listener></a-image>
 
 <a-entity id="cg" gltf-model="#model" scale="0.03 0.03 0.03" position="-1 0 1.15" rotation="90 90 -90" link="href:https://www.google.co.jp" animation-mixer cursor-listener></a-entity>
 <!--link="href:https://www.google.co.jp"-->
