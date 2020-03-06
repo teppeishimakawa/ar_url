@@ -42,7 +42,7 @@ gltfアニメ再生用-->
         }
     });
 
-/*
+
     AFRAME.registerComponent('tel-listener', {
         init: function () {
             this.el.addEventListener('click', function (evt) {
@@ -52,7 +52,7 @@ gltfアニメ再生用-->
             });
         }
     });
-*/
+
 
 
 /*
@@ -110,7 +110,6 @@ gltfアニメ再生用-->
 <a-assets>
   <a-asset-item id="model" crossOrigin="anonymous" src="./gltf/Pagoda.glb"></a-asset-item>
   <img id="img" crossOrigin="anonymous" src="./face.jpg"></img>
-  <img id="imga" crossOrigin="anonymous" src="./marker1.png"></img>
   <video id="vid" src="warp1.m4v" crossOrigin="anonymous" muted autoplay="true" playsinline webkit-playsinline loop="true"></video>
 </a-assets>
 
@@ -162,11 +161,11 @@ gltfアニメ再生用-->
 
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-face.patt" registerevents>
-<a-link href="tel:09084644360" title="My Homepage" image="#imga" position="-1 0 -1" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-link>
+<!--a-link href="tel:09084644360" title="My Homepage" image="#imga" position="-1 0 -1" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-link-->
 <a-entity id="cg" gltf-model="#model" class="link-object" data-link="https://www.google.co.jp" scale="0.03 0.03 0.03" position="-1 0 1.15" rotation="90 90 -90" link="href:https://www.google.co.jp" animation-mixer cursor-listener></a-entity>
 <!--link="href:https://www.google.co.jp"-->
 <a-text id="text" position="-0.3 0.3 1.25" scale="0.4 0.4 0.4" value="Selena Gomez" color="black" rotation="-90 0 0"></a-text>
-<a-box id="box" src="#img"  width="0.7" height="0.7" depth="0.03" position="0 0 0.9" rotation="-90 0 0" tel-listener>
+<a-box link="href:tel:09084644360" id="box" src="#img"  width="0.7" height="0.7" depth="0.03" position="0 0 0.9" rotation="-90 0 0" tel-listener>
 </a-box>
 <a-plane id="plane" material="src:#vid" width="3.2" height="1.8" position="2.2 0 0.4" rotation="-90 0 0" play-listener></a-plane>
 </a-marker>
