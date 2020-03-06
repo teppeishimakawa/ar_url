@@ -33,16 +33,6 @@ gltfアニメ再生用-->
 
 <script>
 
-    AFRAME.registerComponent('tel-listener', {
-        init: function () {
-            this.el.addEventListener('click', function (evt) {
-              //↓超重要!
-                this.setAttribute('href', 'https://www.yahoo.co.jp');
-                //console.log('I was clicked at: ', evt.detail.intersection.point);
-            });
-        }
-    });
-
     AFRAME.registerComponent('cursor-listener', {
         init: function () {
             this.el.addEventListener('click', function (evt) {
@@ -53,7 +43,15 @@ gltfアニメ再生用-->
         }
     });
 
-
+    AFRAME.registerComponent('tel-listener', {
+        init: function () {
+            this.el.addEventListener('click', function (evt) {
+              //↓超重要!
+                this.setAttribute('href', 'https://www.yahoo.co.jp');
+                //console.log('I was clicked at: ', evt.detail.intersection.point);
+            });
+        }
+    });
 
 
 
