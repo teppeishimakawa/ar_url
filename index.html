@@ -86,6 +86,7 @@ gltfアニメ再生用-->
     });
 
 
+/*
         AFRAME.registerComponent('registerevents', {
         init: function () {
             var marker = this.el;
@@ -101,7 +102,7 @@ gltfアニメ再生用-->
                 document.querySelector("#plane").setAttribute('animation', 'property: scale; from:0 0 1 ;to: 1 1 1; loop: false; dur: 1000;easing: easeInOutSine');
                 document.querySelector("#cg").setAttribute('animation','property: scale; from:0 0 0 ;to: 0.03 0.03 0.03; loop: false; dur: 1000;easing: easeInOutSine');
             });}})
-
+*/
 
 </script>
 
@@ -166,7 +167,7 @@ gltfアニメ再生用-->
 <!--a-link href="tel:09084644360" title="My Homepage" image="#imga" position="-1 0 -1" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-link-->
 <!--a-entity geometry="primitive: box;width:0.7;height:0.7;depth:0.1" link="href:https://www.yahoo.co.jp" id="box" material="src:./face.jpg" position="0 0 0.9" rotation="-90 0 0" scale="1 1 1" tel-listener></a-entity-->
 
-<a-image id="box" width="0.7" height="0.7" src="#img" link="href:https://www.yahoo.co.jp" position="0 0 0.9" rotation="-90 0 0" segments-width="3" segments-height="3" tel-listener></a-image>
+<a-image id="box" width="0.7" height="0.7" src="#img" link="href:https://www.yahoo.co.jp" position="0 0 0.9" rotation="-90 0 0" tel-listener></a-image>
 9
 <a-entity id="cg" gltf-model="#model" scale="0.03 0.03 0.03" position="-1 0 1.15" rotation="90 90 -90" link="href:https://www.google.co.jp" animation-mixer cursor-listener></a-entity>
 <!--link="href:https://www.google.co.jp"-->
