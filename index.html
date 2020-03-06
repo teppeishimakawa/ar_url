@@ -25,7 +25,7 @@ https://opensource.org/licenses/mit-license.php
       width: 100%;
     }
   </style>
-<title>VR site</title>
+<title>AR businessCard</title>
  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
   <!--script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script-->
@@ -56,8 +56,7 @@ gltfアニメ再生用-->
         init: function () {
             this.el.addEventListener('click', function (evt) {
               //↓超重要!
-                this.setAttribute('href', 'https://www.yahoo.co.jp');
-                console.log('I was clicked at: ', evt.detail.intersection.point);
+                this.setAttribute('href', 'tel:09084644360');
             });
         }
     });
@@ -176,8 +175,8 @@ gltfアニメ再生用-->
 <!--a-link href="tel:09084644360" title="My Homepage" image="#imga" position="-1 0 -1" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-link-->
 <!--a-entity geometry="primitive: box;width:0.7;height:0.7;depth:0.1" link="href:https://www.yahoo.co.jp" id="box" material="src:./face.jpg" position="0 0 0.9" rotation="-90 0 0" scale="1 1 1" tel-listener></a-entity-->
 
-<a-image id="box" width="0.7" height="0.7" src="#img" link="href:https://www.yahoo.co.jp" position="0 0 0.9" rotation="-90 0 0" tel-listener></a-image>
-9
+<a-image id="box" width="0.7" height="0.7" src="#img" link="href:tel:09084644360" position="0 0 0.9" rotation="-90 0 0" tel-listener></a-image>
+
 <a-entity id="cg" gltf-model="#model" scale="0.03 0.03 0.03" position="-1 0 1.15" rotation="90 90 -90" link="href:https://www.google.co.jp" animation-mixer cursor-listener></a-entity>
 <!--link="href:https://www.google.co.jp"-->
 
