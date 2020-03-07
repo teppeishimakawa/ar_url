@@ -134,9 +134,14 @@ gltfアニメ再生用-->
 
 
 
-<a-entity camera look-controls>
+  <a-entity camera="active: true; near: 1; far: 1000;"
+    position="0 0 0"
+    cursor="rayOrigin: mouse"
+    data-aframe-default-camera
+    look-controls>
+</a-entity>
   <!--cursor="rayOrigin: mouse"重要!-->
-  <a-entity cursor="fuse: false; fuseTimeout: 500"
+  <a-entity cursor="fuse: false; fuseTimeout: 500;rayOrigin: mouse"
             position="-0.015 0.057 -2"
             geometry="primitive: ring"
             scale="0.02 0.02 0.02"
@@ -182,7 +187,7 @@ gltfアニメ再生用-->
 <!--fuse="true" fuse-timeout="3000" -->
 
 <!-- マーカーを登録（hololo testマーカー） -->
-<a-marker preset='custom' type='pattern' url="./pattern-face.patt" registerevents>
+<a-marker preset='custom' type='pattern' url="./pattern-face.patt" emitevents="true" cursor="rayOrigin: mouse" registerevents>
 <!--a-link href="tel:09084644360" title="My Homepage" image="#imga" position="-1 0 -1" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-link-->
 <!--a-entity geometry="primitive: box;width:0.7;height:0.7;depth:0.1" link="href:https://www.yahoo.co.jp" id="box" material="src:./face.jpg" position="0 0 0.9" rotation="-90 0 0" scale="1 1 1" tel-listener></a-entity-->
 
