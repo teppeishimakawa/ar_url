@@ -15,7 +15,7 @@ https://opensource.org/licenses/mit-license.php
 <head>
 <meta charset="UTF-8" />
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<!--meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"-->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 　<style type="text/css">
     body{
       height: 100%;
@@ -47,7 +47,7 @@ gltfアニメ再生用-->
               window.location.href='https://www.google.co.jp';
                 //this.setAttribute('href', 'https://www.google.co.jp');
                 //console.log('I was clicked at: ', evt.detail.intersection.point);
-            }, false);
+            });
         }
     });
 
@@ -57,7 +57,7 @@ gltfアニメ再生用-->
               //↓超重要!
              window.location.href='tel:09084644360';
                 //this.setAttribute('href', 'tel:09084644360');
-            }, false);
+            });
         }
     });
 
@@ -67,7 +67,7 @@ gltfアニメ再生用-->
               //↓超重要!
               window.location.href='mailto:testtest@gmail.com';
                 //this.setAttribute('href', 'mailto:testtest@gmail.com');
-            }, false);
+            });
         }
     });
 
@@ -122,8 +122,8 @@ gltfアニメ再生用-->
 </script>
 
 <body>
- <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;sourceType: webcam;trackingMethod: best;patternRatio:0.80" >
-  <!--embedded arjs="sourceType: webcam;trackingMethod: best;patternRatio:0.80"-->
+ <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;">
+  <!--embedded arjs="sourceType: webcam;trackingMethod: best;patternRatio:0.80;maxDetectionRate:30;"-->
 
 <a-assets>
   <a-asset-item id="model" crossOrigin="anonymous" src="./gltf/Pagoda.glb"></a-asset-item>
@@ -134,11 +134,8 @@ gltfアニメ再生用-->
 
 
 
-  <a-entity camera="active: true; near: 1; far: 1000;"
-    position="0 0 0"
-    cursor="rayOrigin: mouse"
-    data-aframe-default-camera
-    look-controls>
+
+  <a-entity camera look-controls>
 </a-entity>
   <!--cursor="rayOrigin: mouse"重要!-->
   <a-entity cursor="fuse: false; fuseTimeout: 500;rayOrigin: mouse"
