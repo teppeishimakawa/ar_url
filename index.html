@@ -42,7 +42,7 @@ gltfアニメ再生用-->
 
     AFRAME.registerComponent('cursor-listener', {
         init: function () {
-            this.el.addEventListener('click', function (evt) {
+            this.el.addEventListener('touchstart', function (evt) {
               //↓超重要!
                 this.setAttribute('href', 'https://www.google.co.jp');
                 //console.log('I was clicked at: ', evt.detail.intersection.point);
@@ -52,7 +52,7 @@ gltfアニメ再生用-->
 
     AFRAME.registerComponent('tel-listener', {
         init: function () {
-            this.el.addEventListener('click', function (evt) {
+            this.el.addEventListener('touchstart', function (evt) {
               //↓超重要!
                 this.setAttribute('href', 'tel:09084644360');
             });
@@ -61,7 +61,7 @@ gltfアニメ再生用-->
 
     AFRAME.registerComponent('mail-listener', {
         init: function () {
-            this.el.addEventListener('click', function (evt) {
+            this.el.addEventListener('touchstart', function (evt) {
               //↓超重要!
                 this.setAttribute('href', 'mailto:testtest@gmail.com');
             });
@@ -132,7 +132,7 @@ gltfアニメ再生用-->
 
 <a-entity camera look-controls>
   <!--rayOrigin: mouse重要!-->
-  <a-entity cursor="fuse: false; fuseTimeout: 500"
+  <a-entity cursor="fuse: false; fuseTimeout: 500;rayOrigin: mouse"
             position="-0.015 0.057 -2"
             geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
             material="color: white; shader: flat">
