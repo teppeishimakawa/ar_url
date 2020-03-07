@@ -83,7 +83,6 @@ gltfアニメ再生用-->
     });
 */
 
-/*
     AFRAME.registerComponent('play-listener',
     {
         init: function ()
@@ -100,29 +99,15 @@ gltfアニメ再生用-->
       });
     }
     });
-*/
 
-        AFRAME.registerComponent('registerevents', {
-        init: function () {
-            var marker = this.el;
 
-            // マーカーを検出したイベントの登録
-            marker.addEventListener('markerFound', function () {
-                var markerId = marker.id;
-                console.log('markerFound', markerId);
 
-                // アニメーションの開始
-                document.querySelector("#box").setAttribute('animation', 'property: scale; from:1 0 0 ;to: 1 1 1; loop: false; dur: 1000;easing: easeInOutSine');
-                document.querySelector("#text").setAttribute('animation', 'property: scale; from:1 0 0 ;to: 0.4 0.4 0.4; loop: false; dur: 1000;easing: easeInOutSine');
-                document.querySelector("#plane").setAttribute('animation', 'property: scale; from:0 0 1 ;to: 1 1 1; loop: false; dur: 1000;easing: easeInOutSine');
-                document.querySelector("#cg").setAttribute('animation','property: scale; from:0 0 0 ;to: 0.03 0.03 0.03; loop: false; dur: 1000;easing: easeInOutSine');
-            });}})
 
 
 </script>
 
 <body>
- <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;">
+ <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;" >
   <!--embedded arjs="sourceType: webcam;trackingMethod: best;patternRatio:0.80"-->
 
 <a-assets>
@@ -134,12 +119,13 @@ gltfアニメ再生用-->
 
 
 
-<a-entity camera look-controls>
+<a-entity camera look-controls cursor-visible="true">
   <!--rayOrigin: mouse重要!-->
   <a-entity cursor="fuse: false; fuseTimeout: 500;rayOrigin: mouse"
             position="-0.015 0.057 -2"
             geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-            material="color: white; shader: flat">
+            material="color: white; shader: flat"
+            >
         <!--a-animation 
              begin="mouseenter" 
              easing="ease-out" 
@@ -178,7 +164,6 @@ gltfアニメ再生用-->
 </a-entity>
 </a-entity>
 <!--fuse="true" fuse-timeout="3000" -->
-
 
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-face.patt" registerevents>
