@@ -115,7 +115,7 @@ gltfアニメ再生用-->
                 document.querySelector("#box").setAttribute('animation', 'property: scale; from:1 0 0 ;to: 1 1 1; loop: false; dur: 1000;easing: easeInOutSine');
                 document.querySelector("#text").setAttribute('animation', 'property: scale; from:1 0 0 ;to: 0.4 0.4 0.4; loop: false; dur: 1000;easing: easeInOutSine');
                 document.querySelector("#plane").setAttribute('animation', 'property: scale; from:0 0 1 ;to: 1 1 1; loop: false; dur: 1000;easing: easeInOutSine');
-                document.querySelector("#cg").setAttribute('animation','property: scale; from:0 0 0 ;to: 0.04 0.04 0.04; loop: false; dur: 1000;easing: easeInOutSine');
+                document.querySelector("#cg").setAttribute('animation','property: scale; from:0 0 0 ;to: 0.03 0.03 0.03; loop: false; dur: 1000;easing: easeInOutSine');
             });}})
 
 
@@ -186,7 +186,7 @@ gltfアニメ再生用-->
 <a-image id="boxa" width="1" height="1" src="#imga" link="href:mailto:testtest@gmail.com" position="0 0 -1.15" rotation="-90 0 0" mail-listener></a-image>
 
 <!--a-gltf-model id="cg" src="#model"></a-gltf-model-->
-<a-entity id="cg" gltf-model="#model" position="-1 -0.1 0" rotation="90 90 -90" link="href:https://www.google.co.jp" animation-mixer cursor-listener></a-entity>
+<a-entity id="cg" gltf-model="#model" scale="0.04 0.04 0.04" position="-1 0 0" rotation="90 90 -90" link="href:https://www.google.co.jp" animation-mixer cursor-listener></a-entity>
 <!--link="href:https://www.google.co.jp"-->
 
 <a-text id="text" position="-0.3 0.3 1.25" scale="0.4 0.4 0.4" value="Selena Gomez" color="black" rotation="-90 0 0"></a-text>
