@@ -101,7 +101,21 @@ gltfアニメ再生用-->
     });
 
 
+        AFRAME.registerComponent('registerevents', {
+        init: function () {
+            var marker = this.el;
 
+            // マーカーを検出したイベントの登録
+            marker.addEventListener('markerFound', function () {
+                var markerId = marker.id;
+                console.log('markerFound', markerId);
+
+                // アニメーションの開始
+                document.querySelector("#box").setAttribute('animation', 'property: scale; from:1 0 0 ;to: 1 1 1; loop: false; dur: 1000;easing: easeInOutSine');
+                document.querySelector("#text").setAttribute('animation', 'property: scale; from:1 0 0 ;to: 0.4 0.4 0.4; loop: false; dur: 1000;easing: easeInOutSine');
+                document.querySelector("#plane").setAttribute('animation', 'property: scale; from:0 0 1 ;to: 1 1 1; loop: false; dur: 1000;easing: easeInOutSine');
+                document.querySelector("#cg").setAttribute('animation','property: scale; from:0 0 0 ;to: 0.03 0.03 0.03; loop: false; dur: 1000;easing: easeInOutSine');
+            });}})
 
 
 </script>
@@ -171,7 +185,7 @@ gltfアニメ再生用-->
 <!--a-entity geometry="primitive: box;width:0.7;height:0.7;depth:0.1" link="href:https://www.yahoo.co.jp" id="box" material="src:./face.jpg" position="0 0 0.9" rotation="-90 0 0" scale="1 1 1" tel-listener></a-entity-->
 
 
-<a-plane id="box" width="1" height="1" material="src:#img"  position="0 0 0.8" rotation="-90 0 0" tel-listener></a-plane>
+<a-plane id="box" width="2" height="2" material="src:#img"  position="0 0 2.5" rotation="-90 0 0" tel-listener></a-plane>
 <!--link="href:tel:09000000000"-->
 <a-plane  id="boxa" width="1" height="1" material="src:#imga" position="0 0 -1.15" rotation="-90 0 0" mail-listener></a-plane>
 <!--link="href:mailto:testtest@gmail.com"-->
