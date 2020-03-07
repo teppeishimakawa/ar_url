@@ -44,10 +44,11 @@ gltfアニメ再生用-->
         init: function () {
             this.el.addEventListener('click', function (evt) {
               //↓超重要!
-              window.location.href='https://www.google.co.jp';;
+              window.location.href='https://www.google.co.jp';
+              this.style.display = 'none';
                 //this.setAttribute('href', 'https://www.google.co.jp');
                 //console.log('I was clicked at: ', evt.detail.intersection.point);
-            });
+            }, false);
         }
     });
 
@@ -55,9 +56,10 @@ gltfアニメ再生用-->
         init: function () {
             this.el.addEventListener('click', function (evt) {
               //↓超重要!
-             window.location.href='tel:09084644360';;
+             window.location.href='tel:09084644360';
+             this.style.display = 'none';
                 //this.setAttribute('href', 'tel:09084644360');
-            });
+            }, false);
         }
     });
 
@@ -65,9 +67,10 @@ gltfアニメ再生用-->
         init: function () {
             this.el.addEventListener('click', function (evt) {
               //↓超重要!
-              window.location.href='mailto:testtest@gmail.com';;
+              window.location.href='mailto:testtest@gmail.com';
+              this.style.display = 'none';
                 //this.setAttribute('href', 'mailto:testtest@gmail.com');
-            });
+            }, false);
         }
     });
 
@@ -122,7 +125,7 @@ gltfアニメ再生用-->
 </script>
 
 <body>
- <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;" >
+ <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;sourceType: webcam;trackingMethod: best;patternRatio:0.80" >
   <!--embedded arjs="sourceType: webcam;trackingMethod: best;patternRatio:0.80"-->
 
 <a-assets>
@@ -134,11 +137,12 @@ gltfアニメ再生用-->
 
 
 
-<a-entity camera look-controls cursor-visible="true">
+<a-entity camera look-controls mouse-cursor>
   <!--rayOrigin: mouse重要!-->
   <a-entity cursor="fuse: false; fuseTimeout: 500;rayOrigin: mouse"
             position="-0.015 0.057 -2"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            geometry="primitive: ring"
+            scale="0.02 0.02 0.02"
             material="color: white; shader: flat"
             >
         <!--a-animation 
