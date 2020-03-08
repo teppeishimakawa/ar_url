@@ -58,7 +58,7 @@ gltfアニメ再生用-->
     {
         init: function ()
      {
-      this.el.addEventListener('mousedown',function()
+      this.el.addEventListener('touchstart',function()
       {
       window.location.href='https://www.google.co.jp';
       });
@@ -69,7 +69,7 @@ gltfアニメ再生用-->
     AFRAME.registerComponent('tel-listener',
     {
         init: function () {
-            this.el.addEventListener('mousedown', function ()
+            this.el.addEventListener('touchstart', function ()
             {
               //↓超重要!
              window.location.href='tel:09000000000';
@@ -80,7 +80,7 @@ gltfアニメ再生用-->
 
     AFRAME.registerComponent('mail-listener', {
         init: function () {
-            this.el.addEventListener('mousedown', function ()
+            this.el.addEventListener('touchstart', function ()
             {
               //↓超重要!
               window.location.href='mailto:testtest@gmail.com';
