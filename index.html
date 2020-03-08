@@ -101,7 +101,7 @@ gltfアニメ再生用-->
     });
 */
 
-/*
+
     AFRAME.registerComponent('play-listener',
     {
         init: function ()
@@ -118,7 +118,7 @@ gltfアニメ再生用-->
       });
     }
     });
-*/
+
 /*
 
         AFRAME.registerComponent('registerevents', {
@@ -153,7 +153,7 @@ gltfアニメ再生用-->
 
 <!--fuse="true" fuse-timeout="3000" -->
 <!--処理と反応速度、エリア改善のためraycaster必要!-->
-   <a-entity camera look-controls></a-entity>
+   <a-entity camera look-controls raycaster="objects: .collidable;"></a-entity>
   <!--cursor="rayOrigin: mouse"重要!fuseTimeout: 500;-->
   <!--raycaster="showLine: true; far: 100" line="color: orange; opacity: 0.5"-->
   <a-entity cursor="fuse: false;fuse-timeout:500;rayOrigin: mouse;"
@@ -161,7 +161,6 @@ gltfアニメ再生用-->
             geometry="primitive: ring"
             scale="0.02 0.02 0.02"
             material="color: white; shader: flat"
-            raycaster="objects: .collidable;"
             >
             <!--cursor="rayOrigin: mouse;"-->
 
