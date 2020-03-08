@@ -140,7 +140,7 @@ gltfアニメ再生用-->
 </script>
 
 <body>
- <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;">
+ <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false;raycaster="objects: .collidable;"">
   <!--embedded arjs="sourceType: webcam;trackingMethod: best;patternRatio:0.80;maxDetectionRate:30;"-->
 
 <a-assets>
@@ -152,14 +152,15 @@ gltfアニメ再生用-->
 
 <!--fuse="true" fuse-timeout="3000" -->
 <!--処理と反応速度、エリア改善のためraycaster必要!-->
-   <a-entity camera look-controls raycaster="objects: .collidable;rayOrigin: mouse;"></a-entity>
+   <a-entity camera look-controls></a-entity>
   <!--cursor="rayOrigin: mouse"重要!fuseTimeout: 500;-->
   <!--raycaster="showLine: true; far: 100" line="color: orange; opacity: 0.5"-->
-  <a-entity cursor="fuse: false;fuse-timeout:500;"
+  <a-entity cursor="fuse: false;fuse-timeout:500;rayOrigin: mouse;"
             position="0 0 -1"
             geometry="primitive: ring"
             scale="0.02 0.02 0.02"
-            material="color: white; shader: flat">
+            material="color: white; shader: flat"
+            >
             <!--cursor="rayOrigin: mouse;"-->
 
 <!--raycaster="objects: .collidable"-->
