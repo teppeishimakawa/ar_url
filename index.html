@@ -58,7 +58,7 @@ gltfアニメ再生用-->
     {
         init: function ()
      {
-      this.el.addEventListener('click',function()
+      this.el.addEventListener('mousedown',function()
       {
       window.location.href='https://www.google.co.jp';
       });
@@ -69,7 +69,7 @@ gltfアニメ再生用-->
     AFRAME.registerComponent('tel-listener',
     {
         init: function () {
-            this.el.addEventListener('click', function ()
+            this.el.addEventListener('mousedown', function ()
             {
               //↓超重要!
              window.location.href='tel:09000000000';
@@ -80,7 +80,7 @@ gltfアニメ再生用-->
 
     AFRAME.registerComponent('mail-listener', {
         init: function () {
-            this.el.addEventListener('click', function ()
+            this.el.addEventListener('mousedown', function ()
             {
               //↓超重要!
               window.location.href='mailto:testtest@gmail.com';
@@ -140,7 +140,7 @@ gltfアニメ再生用-->
 </script>
 
 <body>
- <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false" raycaster="objects: .collidable;">
+ <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false">
   <!--embedded arjs="sourceType: webcam;trackingMethod: best;patternRatio:0.80;maxDetectionRate:30;"-->
 
 <a-assets>
@@ -160,6 +160,7 @@ gltfアニメ再生用-->
             geometry="primitive: ring"
             scale="0.02 0.02 0.02"
             material="color: white; shader: flat"
+            raycaster="objects: .collidable;"
             >
             <!--cursor="rayOrigin: mouse;"-->
 
