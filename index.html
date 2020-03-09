@@ -58,7 +58,7 @@ gltfアニメ再生用-->
     {
         init: function ()
      {
-      this.el.addEventListener('click',function(evt)
+      this.el.sceneEl.addEventListener('click',function(evt)
       {
       if (evt.detail.intersectedEl === undefined) { return; }
       window.location.href='https://www.google.co.jp';
@@ -71,7 +71,7 @@ gltfアニメ再生用-->
     AFRAME.registerComponent('tel-listener',
     {
         init: function () {
-            this.el.addEventListener('click', function (evt)
+            this.el.sceneEl.addEventListener('click', function (evt)
             {
               if (evt.detail.intersectedEl === undefined) { return; }
               //↓超重要!
@@ -84,7 +84,7 @@ gltfアニメ再生用-->
 
     AFRAME.registerComponent('mail-listener', {
         init: function () {
-            this.el.addEventListener('click', function (evt)
+            this.el.sceneEl.addEventListener('click', function (evt)
             {
               if (evt.detail.intersectedEl === undefined) { return; }
               //↓超重要!
@@ -114,7 +114,7 @@ gltfアニメ再生用-->
      {
       let vid = document.querySelector("#vid");
       vid.pause();
-      this.el.addEventListener('mouseenter',function(evt)
+      this.el.sceneEl.addEventListener('mouseenter',function(evt)
       {
       if (evt.detail.intersectedEl === undefined) { return; }
       vid.play();
