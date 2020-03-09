@@ -42,7 +42,16 @@ gltfアニメ再生用-->
 <script>
 
 
-document.getElementById("request_permission").addEventListener("click", function(){
+DeviceMotionEvent.requestPermission()
+.then(response => {
+  if (response == 'granted') {
+    window.addEventListener('devicemotion', (e) => {
+      // do something with e
+    })
+  }
+}).catch(console.error)
+
+
   if (
     DeviceMotionEvent &&
     DeviceMotionEvent.requestPermission &&
@@ -57,7 +66,7 @@ document.getElementById("request_permission").addEventListener("click", function
   ) {
     DeviceOrientationEvent.requestPermission();
   }
-})
+
 
 /*
     AFRAME.registerComponent('cursor-listener', {
