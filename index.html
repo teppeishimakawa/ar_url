@@ -58,11 +58,12 @@ gltfアニメ再生用-->
     {
         init: function ()
      {
-      this.el.addEventListener('click',function()
+      this.el.addEventListener('click',function(evt)
       {
+      if (evt.detail.intersectedEl === undefined) { return; }
       window.location.href='https://www.google.co.jp';
       //window.open('https://www.google.co.jp');
-      });
+      },false);
     }
     });
 
@@ -70,25 +71,27 @@ gltfアニメ再生用-->
     AFRAME.registerComponent('tel-listener',
     {
         init: function () {
-            this.el.addEventListener('click', function ()
+            this.el.addEventListener('click', function (evt)
             {
+              if (evt.detail.intersectedEl === undefined) { return; }
               //↓超重要!
              window.location.href='tel:09000000000';
              //window.open('tel:09000000000');
                 //this.setAttribute('href', 'tel:09000000000');
-            });
+            },false);
         }
     });
 
     AFRAME.registerComponent('mail-listener', {
         init: function () {
-            this.el.addEventListener('click', function ()
+            this.el.addEventListener('click', function (evt)
             {
+              if (evt.detail.intersectedEl === undefined) { return; }
               //↓超重要!
               window.location.href='mailto:testtest@gmail.com';
               //window.open('mailto:testtest@gmail.com');
                 //this.setAttribute('href', 'mailto:testtest@gmail.com');
-            });
+            },false);
         }
     });
 
@@ -111,14 +114,16 @@ gltfアニメ再生用-->
      {
       let vid = document.querySelector("#vid");
       vid.pause();
-      this.el.addEventListener('mouseenter',function()
+      this.el.addEventListener('mouseenter',function(evt)
       {
+      if (evt.detail.intersectedEl === undefined) { return; }
       vid.play();
-      });
-      this.el.addEventListener('mouseleave',function()
+      },false);
+      this.el.addEventListener('mouseleave',function(evt)
       {
+      if (evt.detail.intersectedEl === undefined) { return; }
       vid.pause();
-      });
+      },false);
     }
     });
 
@@ -159,16 +164,17 @@ gltfアニメ再生用-->
    <a-entity camera look-controls ></a-entity>
   <!--cursor="rayOrigin: mouse"重要!fuseTimeout: 500;-->
   <!--raycaster="showLine: true; far: 100" line="color: orange; opacity: 0.5"-->
-
-  <!--a-entity cursor="fuse: false;fuse-timeout:500;rayOrigin: mouse;"
+  <a-entity cursor="fuse: false;fuse-timeout:500;rayOrigin: mouse;"
             position="0 0 -1"
             geometry="primitive: ring"
             scale="0.02 0.02 0.02"
             material="color: white; shader: flat"
-            raycaster="objects: .collidable;far: 20;"
+            raycaster="objects: .collidable;far: 100;"
+            line="color: orange; opacity: 1"
             >
+            <!--cursor="rayOrigin: mouse;"-->
 
-<raycaster="objects: .collidable"-->
+<!--raycaster="objects: .collidable"-->
         <!--a-animation 
              begin="mouseenter" 
              easing="ease-out" 
@@ -202,9 +208,9 @@ gltfアニメ再生用-->
              from="red" 
              to="black" 
              dur="0">
-      </a-animation>
+      </a-animation-->
 
-</a-entity-->
+</a-entity>
 </a-entity>
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-face.patt" emitevents="true" rotation="-90 0 0"registerevents>
