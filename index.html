@@ -19,16 +19,16 @@ https://opensource.org/licenses/mit-license.php
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 　<style type="text/css">
     body{
-      height: 100%;
       margin: 0;
       overflow: hidden;
-      padding: 0;
-      width: 100%;
     }
   </style>
 <title>AR businessCard</title>
- <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"></script>
+ <!--script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"></script-->
+
   <!--script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script-->
   <!--script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script-->
   <!-- glTFに含まれたアニメーションを再生するためにaframe-extrasをロード -->
@@ -40,32 +40,6 @@ gltfアニメ再生用-->
 </head>
 
 <script>
-
-
-DeviceMotionEvent.requestPermission()
-.then(response => {
-  if (response == 'granted') {
-    window.addEventListener('devicemotion', (e) => {
-      // do something with e
-    })
-  }
-}).catch(console.error)
-
-
-  if (
-    DeviceMotionEvent &&
-    DeviceMotionEvent.requestPermission &&
-    typeof DeviceMotionEvent.requestPermission === 'function'
-  ) {
-    DeviceMotionEvent.requestPermission();
-  }
-  if (
-    DeviceOrientationEvent &&
-    DeviceOrientationEvent.requestPermission &&
-    typeof DeviceOrientationEvent.requestPermission === 'function'
-  ) {
-    DeviceOrientationEvent.requestPermission();
-  }
 
 
 /*
