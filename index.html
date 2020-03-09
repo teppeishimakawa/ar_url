@@ -54,7 +54,6 @@ gltfアニメ再生用-->
     });
 */
 
-if (evt.detail.intersectedEl === undefined) { return; }
 
 
    AFRAME.registerComponent('cursor-listener',
@@ -124,7 +123,6 @@ if (evt.detail.intersectedEl === undefined) { return; }
       },false);
       this.el.addEventListener('mouseleave',function(evt)
       {
-      if (evt.detail.intersectedEl === undefined) { return; }
       vid.pause();
       },false);
     }
