@@ -159,16 +159,16 @@ gltfアニメ再生用-->
    <a-entity camera look-controls ></a-entity>
   <!--cursor="rayOrigin: mouse"重要!fuseTimeout: 500;-->
   <!--raycaster="showLine: true; far: 100" line="color: orange; opacity: 0.5"-->
-  <a-entity cursor="fuse: false;fuse-timeout:500;rayOrigin: mouse;"
+
+  <!--a-entity cursor="fuse: false;fuse-timeout:500;rayOrigin: mouse;"
             position="0 0 -1"
             geometry="primitive: ring"
             scale="0.02 0.02 0.02"
             material="color: white; shader: flat"
             raycaster="objects: .collidable;far: 20;"
             >
-            <!--cursor="rayOrigin: mouse;"-->
 
-<!--raycaster="objects: .collidable"-->
+<raycaster="objects: .collidable"-->
         <!--a-animation 
              begin="mouseenter" 
              easing="ease-out" 
@@ -202,16 +202,16 @@ gltfアニメ再生用-->
              from="red" 
              to="black" 
              dur="0">
-      </a-animation-->
+      </a-animation>
 
-</a-entity>
+</a-entity-->
 </a-entity>
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-face.patt" emitevents="true" rotation="-90 0 0"registerevents>
 <!--a-link href="tel:09000000000" title="My Homepage" image="#imga" position="-1 0 -1" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-link-->
 <!--a-entity geometry="primitive: box;width:0.7;height:0.7;depth:0.1" link="href:https://www.yahoo.co.jp" id="box" material="src:./face.jpg" position="0 0 0.9" rotation="-90 0 0" scale="1 1 1" tel-listener></a-entity-->
 
-<a-plane id="box" class="collidable" width="1.5" height="1.5" material="src:#img;transparent: true;"  position="-1 -1 1" rotation="-90 0 0" tel-listener
+<a-plane id="box" class="collidable" width="1" height="1" material="src:#img;transparent: true;"  position="-0.7 -1 1" rotation="-90 0 0" tel-listener
 animation__in="property: components.material.material.opacity;
                from: 1;
                to: 0.75;
@@ -223,7 +223,7 @@ animation__out="property: components.material.material.opacity;
                dur: 100;
                startEvents: mouseleave"></a-plane>
 <!--link="href:tel:09000000000"-->
-<a-plane  id="boxa" class="collidable" width="1.5" height="1.5" material="src:#imga" position="1 -1 1" rotation="-90 0 0" mail-listener
+<a-plane  id="boxa" class="collidable" width="1" height="1" material="src:#imga" position="0.7 -1 1" rotation="-90 0 0" mail-listener
 animation__in="property: components.material.material.opacity;
                from: 1;
                to: 0.75;
