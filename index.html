@@ -151,7 +151,8 @@ gltfアニメ再生用-->
 </script>
 
 <body>
- <a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false">
+  <a-scene embedded arjs>
+ <!--a-scene inspector="" renderer="antialias:true;gammaOutput:true;physicallyCorrectLights:true" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:false" embedded arjs="debugUIEnabled:false"-->
   <!--embedded arjs="sourceType: webcam;trackingMethod: best;patternRatio:0.80;maxDetectionRate:30;"-->
 
 <a-assets>
@@ -163,17 +164,11 @@ gltfアニメ再生用-->
 
 <!--fuse="true" fuse-timeout="3000" -->
 <!--処理と反応速度、エリア改善のためraycaster必要!-->
-   <a-entity camera look-controls ></a-entity>
+   <a-entity camera><a-entity cursor="fuse: false;fuse-timeout:500;">
+  </a-entity></a-entity>
   <!--cursor="rayOrigin: mouse"重要!fuseTimeout: 500;-->
   <!--raycaster="showLine: true; far: 100" line="color: orange; opacity: 0.5"-->
-  <a-entity cursor="fuse: false;fuse-timeout:500;rayOrigin: mouse;"
-            position="0 0 -1"
-            geometry="primitive: ring"
-            scale="0.02 0.02 0.02"
-            material="color: white; shader: flat"
-            raycaster="objects: .collidable;far: 100;"
-            line="color: orange; opacity: 1"
-            >
+  <!--a-entity cursor="fuse: false;fuse-timeout:500;rayOrigin: mouse;"-->
             <!--cursor="rayOrigin: mouse;"-->
 
 <!--raycaster="objects: .collidable"-->
@@ -212,8 +207,7 @@ gltfアニメ再生用-->
              dur="0">
       </a-animation-->
 
-</a-entity>
-</a-entity>
+<!--/a-entity-->
 <!-- マーカーを登録（hololo testマーカー） -->
 <a-marker preset='custom' type='pattern' url="./pattern-face.patt" emitevents="true" rotation="-90 0 0"registerevents>
 <!--a-link href="tel:09000000000" title="My Homepage" image="#imga" position="-1 0 -1" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-link-->
